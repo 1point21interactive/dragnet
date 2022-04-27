@@ -41,7 +41,7 @@ content = extract_content(r.content)
 content_comments = extract_content_and_comments(r.content)
 ```
 
-We also provide a sklearn-style extractor class(complete with `fit` and 
+We also provide a sklearn-style extractor class(complete with `fit` and
 `predict` methods). You can either train an extractor yourself, or load a
 pre-trained one:
 ```python
@@ -51,7 +51,7 @@ content_extractor = load_pickled_model(
             'kohlschuetter_readability_weninger_content_model.pkl.gz')
 content_comments_extractor = load_pickled_model(
             'kohlschuetter_readability_weninger_comments_content_model.pkl.gz')
-            
+
 content = content_extractor.extract(r.content)
 content_comments = content_comments_extractor.extract(r.content)
 ```
@@ -70,7 +70,7 @@ Otherwise, we try to guess the encoding from a `meta` tag or specified
 
 ## Installing
 
-Dragnet is written in Python (developed with 2.7, with support recently 
+Dragnet is written in Python (developed with 2.7, with support recently
 added for 3) and built on the numpy/scipy/Cython numerical computing
 environment.
 In addition we use [lxml](http://lxml.de/) (libxml2)
@@ -89,9 +89,13 @@ container with Dragnet and its dependencies.
 3. Build the docker container: `docker build -t dragnet .`
 4. Run the tests: `docker run dragnet make test`
 
+```bash
+docker run --rm -e WEB_CONCURRENCY=4 -e USR=root -e PASSWD=yolo -p 5000:5000 dragnet
+```
+
 You can also run an interactive Python session:
 ```bash
-docker run -ti dragnet python3
+docker run --rm -it dragnet python3
 ```
 
 ### Installing without Docker
