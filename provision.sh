@@ -7,7 +7,10 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get install -y --no-install-recommends \
   build-essential ca-certificates curl \
-  libxslt-dev libxml2-dev
+  libxslt1-dev libxml2-dev
+# apt-get install -y --no-install-recommends \
+#   build-essential ca-certificates curl \
+#   libxslt-dev libxml2-dev
 
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b

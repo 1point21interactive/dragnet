@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+FROM debian:bullseye
+# FROM ubuntu:20.04
 
 RUN useradd -ms /bin/bash dragnet
 
